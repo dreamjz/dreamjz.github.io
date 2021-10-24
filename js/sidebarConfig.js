@@ -17,6 +17,14 @@ module.exports = {
                     '/zh/golang/golang-daily-lib/viper'
                 ]
             }]
+            }, {
+                title: 'Linux',
+                children: [{
+                    title: 'Vim',
+                    children: [
+                        '/zh/linux/vim/spf13-vim-plugin',
+                    ]
+                }]
         }]
 
     }
