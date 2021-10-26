@@ -4,7 +4,7 @@ const sidebarGolang = require("./sbarGolang.js")
 module.exports = {
     sidebar: {
         '/zh/': [{
-                title: 'Index',
+                title: 'Welcome',
                 path: '/zh/'
             },
             sidebarGolang,
