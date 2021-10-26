@@ -1,31 +1,24 @@
+const sidebarLinux = require("./sbarLinux.js")
+const sidebarGolang = require("./sbarGolang.js")
+
 module.exports = {
-    sidebar:{
+    sidebar: {
         '/zh/': [{
-            title: 'Index',
-            path: '/zh/'
-        }, {
-            title: 'Golang',
-            children: [{
-                title: 'Golang-daily-lib',
-                children: [
-                    '/zh/golang/golang-daily-lib/preface',
-                    '/zh/golang/golang-daily-lib/flag',
-                    '/zh/golang/golang-daily-lib/go-flags',
-                    '/zh/golang/golang-daily-lib/go-homedir',
-                    '/zh/golang/golang-daily-lib/go-ini',
-                    '/zh/golang/golang-daily-lib/cobra',
-                    '/zh/golang/golang-daily-lib/viper'
-                ]
-            }]
-            }, {
-                title: 'Linux',
+                title: 'Index',
+                path: '/zh/'
+            },
+            sidebarGolang,
+            sidebarLinux,
+            {
+                title: 'Front End',
                 children: [{
-                    title: 'Vim',
+                    title: 'Vue',
                     children: [
-                        '/zh/linux/vim/spf13-vim-plugin',
+                        '',
                     ]
                 }]
-        }]
+            }
+        ]
 
     }
 }
