@@ -12,6 +12,7 @@ module.exports = {
                     '/zh/golang/golang-daily-lib/viper',
                     '/zh/golang/golang-daily-lib/fsnotify',
                     '/zh/golang/golang-daily-lib/cast',
+                    '/zh/golang/golang-daily-lib/log',
                 ]
             }]
 }
