@@ -1,5 +1,7 @@
 const sidebarLinux = require("./sbarLinux.js")
 const sidebarGolang = require("./sbarGolang.js")
+const sidebarNginx = require("./sbarNginx")
+
 
 module.exports = {
     sidebar: {
@@ -9,6 +11,7 @@ module.exports = {
             },
             sidebarGolang,
             sidebarLinux,
+            sidebarNginx,
             {
                 title: 'Front End',
                 children: [{
