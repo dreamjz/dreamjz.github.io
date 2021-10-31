@@ -1,5 +1,3 @@
-
-
 module.exports = {
     title: 'Linux',
     children: [{
