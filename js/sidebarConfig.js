@@ -3,7 +3,7 @@ const sidebarGolang = require("./sbarGolang")
 const sidebarNginx = require("./sbarNginx")
 const sidebarDocker = require("./sbarDocker")
 const sidebarFrontEnd = require("./sbarFrontEnd")
-
+const sidebarRaspi=require("./sbarRaspi")
 module.exports = {
     sidebar: {
         '/zh/': [{
@@ -15,6 +15,7 @@ module.exports = {
             sidebarNginx,
             sidebarDocker,
             sidebarFrontEnd,
+            sidebarRaspi,
         ]
 
     }

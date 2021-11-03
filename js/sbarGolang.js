@@ -14,6 +14,7 @@ module.exports = {
                     '/zh/golang/golang-daily-lib/cast',
                     '/zh/golang/golang-daily-lib/log',
                     '/zh/golang/golang-daily-lib/logrus',
+                    '/zh/golang/golang-daily-lib/godotenv',
                 ]
             }]
 }
