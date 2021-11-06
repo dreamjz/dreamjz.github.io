@@ -1,12 +1,6 @@
 module.exports = {
-  title: "Nginx",
+  title: 'Nginx',
   children: [
-    // {
-    // title: '',
-    // children: [
-    //     '',
-    // ]
-    // }
-    "/zh/nginx/nginx",
+    '/zh/nginx/nginx',
   ],
 };

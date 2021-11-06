@@ -1,9 +1,8 @@
 module.exports = {
-  title: "Front End",
+  title: 'Front End',
   children: [
     {
-      title: "Vue",
-      children: [""],
+      title: 'Vue',
     },
   ],
 };

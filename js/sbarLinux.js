@@ -1,9 +1,11 @@
 module.exports = {
-  title: "Linux",
+  title: 'Linux',
   children: [
     {
-      title: "Vim",
-      children: ["/zh/linux/vim/spf13-vim-plugin"],
+      title: 'Vim',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: ['/zh/linux/vim/spf13-vim-plugin'],
     },
   ],
 };
