@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx 极简教程 | 今朝のブログ</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+    <link rel="shortcut icon" herf="favicon.ico">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-3RQ3LRSTKM"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+		  
+			gtag('config', 'G-3RQ3LRSTKM');</script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="google-site-verification" content="lHBWOiWCnBWvc1h4REqjllalv9ZpQbXbHDdM8chFuuw">
+    
+    <link rel="preload" href="/assets/css/0.styles.4cf4d0e6.css" as="style"><link rel="preload" href="/assets/js/app.b0311869.js" as="script"><link rel="preload" href="/assets/js/5.7cb2094f.js" as="script"><link rel="preload" href="/assets/js/1.7ee7f9d3.js" as="script"><link rel="preload" href="/assets/js/33.e2478c17.js" as="script"><link rel="prefetch" href="/assets/js/10.64751367.js"><link rel="prefetch" href="/assets/js/11.3f95f62e.js"><link rel="prefetch" href="/assets/js/12.b33964d5.js"><link rel="prefetch" href="/assets/js/13.04db2a80.js"><link rel="prefetch" href="/assets/js/14.66a95bbb.js"><link rel="prefetch" href="/assets/js/15.31346641.js"><link rel="prefetch" href="/assets/js/16.dcfe3c74.js"><link rel="prefetch" href="/assets/js/17.6bf2e0d3.js"><link rel="prefetch" href="/assets/js/18.9dff60f7.js"><link rel="prefetch" href="/assets/js/19.04e6c099.js"><link rel="prefetch" href="/assets/js/2.1e48f163.js"><link rel="prefetch" href="/assets/js/20.cc05f531.js"><link rel="prefetch" href="/assets/js/21.26ed051e.js"><link rel="prefetch" href="/assets/js/22.c8ec983f.js"><link rel="prefetch" href="/assets/js/23.21e66269.js"><link rel="prefetch" href="/assets/js/24.4c0efe46.js"><link rel="prefetch" href="/assets/js/25.7b44cded.js"><link rel="prefetch" href="/assets/js/26.502c3538.js"><link rel="prefetch" href="/assets/js/27.2594331c.js"><link rel="prefetch" href="/assets/js/28.dd7f11be.js"><link rel="prefetch" href="/assets/js/29.5cacf2ed.js"><link rel="prefetch" href="/assets/js/30.ea49844b.js"><link rel="prefetch" href="/assets/js/31.ef04413c.js"><link rel="prefetch" href="/assets/js/32.8b17c883.js"><link rel="prefetch" href="/assets/js/34.ae0a4d4b.js"><link rel="prefetch" href="/assets/js/35.a7e5687c.js"><link rel="prefetch" href="/assets/js/36.7244337b.js"><link rel="prefetch" href="/assets/js/37.048b1e8d.js"><link rel="prefetch" href="/assets/js/38.54d2f115.js"><link rel="prefetch" href="/assets/js/39.0691a821.js"><link rel="prefetch" href="/assets/js/40.b574b736.js"><link rel="prefetch" href="/assets/js/6.246a2818.js"><link rel="prefetch" href="/assets/js/7.50146241.js"><link rel="prefetch" href="/assets/js/8.9afac701.js"><link rel="prefetch" href="/assets/js/9.24fd4584.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.1dd0e98e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4cf4d0e6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-0f44a727><div data-v-0f44a727><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0f44a727 data-v-0f44a727><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-355e03f9 data-v-0f44a727 data-v-0f44a727><h3 class="title" data-v-355e03f9 data-v-355e03f9>今朝のブログ</h3> <p class="description" data-v-355e03f9 data-v-355e03f9></p> <label id="box" class="inputBox" data-v-355e03f9 data-v-355e03f9><input type="password" value="" data-v-355e03f9> <span data-v-355e03f9>Konck! Knock!</span> <button data-v-355e03f9>OK</button></label> <div class="footer" data-v-355e03f9 data-v-355e03f9><span data-v-355e03f9><i class="iconfont reco-theme" data-v-355e03f9></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-355e03f9>vuePress-theme-reco</a></span> <span data-v-355e03f9><i class="iconfont reco-copyright" data-v-355e03f9></i> <a data-v-355e03f9><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-0f44a727><header class="navbar" data-v-0f44a727><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/image/hero.jpg" alt="今朝のブログ" class="logo"> <span class="site-name">今朝のブログ</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/index.html" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/zh/golang/one.html" class="nav-link"><i class="undefined"></i>
+  Golang
+</a></li><li class="dropdown-item"><!----> <a href="/zh/git.html" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tags
+</a></div><div class="nav-item"><a href="https://github.com/dreamjz" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0f44a727></div> <aside class="sidebar" data-v-0f44a727><div class="personal-info-wrapper" data-v-5aaeb100 data-v-0f44a727><img src="/image/hero.jpg" alt="author-avatar" class="personal-img" data-v-5aaeb100> <!----> <div class="num" data-v-5aaeb100><div data-v-5aaeb100><h3 data-v-5aaeb100>25</h3> <h6 data-v-5aaeb100>Articles</h6></div> <div data-v-5aaeb100><h3 data-v-5aaeb100>19</h3> <h6 data-v-5aaeb100>Tags</h6></div></div> <ul class="social-links" data-v-5aaeb100></ul> <hr data-v-5aaeb100></div> <nav class="nav-links"><div class="nav-item"><a href="/zh/index.html" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/zh/golang/one.html" class="nav-link"><i class="undefined"></i>
+  Golang
+</a></li><li class="dropdown-item"><!----> <a href="/zh/git.html" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="/tags/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tags
+</a></div><div class="nav-item"><a href="https://github.com/dreamjz" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><a href="/zh/" aria-current="page" class="sidebar-link">Welcome</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Nginx</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/nginx/nginx.html" class="active sidebar-link">Nginx 极简教程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Front End</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Raspberry Pi</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-355e03f9 data-v-0f44a727><h3 class="title" data-v-355e03f9 data-v-355e03f9>Nginx 极简教程</h3> <!----> <label id="box" class="inputBox" data-v-355e03f9 data-v-355e03f9><input type="password" value="" data-v-355e03f9> <span data-v-355e03f9>Konck! Knock!</span> <button data-v-355e03f9>OK</button></label> <div class="footer" data-v-355e03f9 data-v-355e03f9><span data-v-355e03f9><i class="iconfont reco-theme" data-v-355e03f9></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-355e03f9>vuePress-theme-reco</a></span> <span data-v-355e03f9><i class="iconfont reco-copyright" data-v-355e03f9></i> <a data-v-355e03f9><!---->
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-0f44a727><div id="particles-js" color="#dedede" particleOpacity="0.7" linesColor="#dedede" particlesNumber="80" shapeType="circle" particleSize="4" linesWidth="1" lineLinked="true" lineOpacity="0.4" linesDistance="150" moveSpeed="3" hoverEffect="true" hoverMode="grab" clickEffect="true" clickMode="push" class="bg-particles"></div> <main class="page"><section><div class="page-title"><h1 class="title">Nginx 极简教程</h1> <div data-v-ff1aa866><i class="iconfont reco-account" data-v-ff1aa866><span data-v-ff1aa866>今朝</span></i> <i class="iconfont reco-date" data-v-ff1aa866><span data-v-ff1aa866>2021/10/31</span></i> <!----> <i class="tags iconfont reco-tag" data-v-ff1aa866><span class="tag-item active" data-v-ff1aa866></span></i></div></div> <div class="theme-reco-content content__default"><h2 id="introduction-简介"><a href="#introduction-简介" class="header-anchor">#</a> Introduction 简介</h2> <p>Nginx(engine x)是一款轻量级的web服务器，反向代理服务器及电子邮件(IMAP/POP3)代理服务器</p> <p><img src="/image/nginx/nginx.jpg" alt="nginx"></p> <h3 id="反向代理"><a href="#反向代理" class="header-anchor">#</a> 反向代理</h3> <p>反向代理(Reverse proxy)方式是指以代理服务器来接受 internet 上的连接请求，然后将请求发给内部网络上的服务器，并将服务器上得到的结果返回给 internet 上请求连接的客户端，此时代理服务器就表现为一个反向代理服务器</p> <p><img src="/image/nginx/reverse-proxy.png" alt="reverse-proxy"></p> <h2 id="开始使用"><a href="#开始使用" class="header-anchor">#</a> 开始使用</h2> <p>环境：</p> <ul><li>Server: Raspian 64-bit</li> <li>Client: Windows11</li></ul> <p>nginx常用命令如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>nginx -s stop       快速关闭Nginx，可能不保存相关信息，并迅速终止web服务。
+nginx -s quit       平稳关闭Nginx，保存相关信息，有安排的结束web服务。
+nginx -s reload     因改变了Nginx相关配置，需要重新加载配置而重载。
+nginx -s reopen     重新打开日志文件。
+nginx -c filename   为 Nginx 指定一个配置文件，来代替缺省的。
+nginx -t            不运行，仅仅测试配置文件。nginx 将检查配置文件的语法的正确性，并尝试打开配置文件中所引用到的文件。
+nginx -v            显示 nginx 的版本。
+nginx -V            显示 nginx 的版本，编译器版本和配置参数。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>可以编写启动脚本,方便快速启动:</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token shebang important">#!/bin/zsh   </span>
+<span class="token assign-left variable">CONFIG</span><span class="token operator">=</span><span class="token environment constant">$HOME</span>/nginx/nginx.conf
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Config path: &quot;</span><span class="token variable">$CONFIG</span><span class="token string">&quot; &quot;</span>
+
+<span class="token comment">#  如果启动前已经启动nginx并记录下pid文件，会kill指定进程</span>
+<span class="token function">sudo</span> nginx -s stop
+
+<span class="token comment"># 测试配置文件语法正确性</span>
+<span class="token function">sudo</span> nginx -t -c <span class="token variable">$CONFIG</span>
+
+<span class="token comment"># 显示版本信息</span>
+<span class="token function">sudo</span> nginx -v
+
+<span class="token comment"># 按照指定配置去启动nginx</span>
+<span class="token function">sudo</span> nginx -c <span class="token variable">$CONFIG</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="http-反向代理"><a href="#http-反向代理" class="header-anchor">#</a> Http 反向代理</h3> <p>nginx配置如下(linux默认配置为<code>/etc/nginx/nginx.conf</code>,也可使用<code>-c</code>指定配置文件)：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment">#运行用户</span>
+user username<span class="token punctuation">;</span>
+
+
+<span class="token comment">#启动进程,通常设置成和cpu的数量相等</span>
+worker_processes  <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">#全局错误日志</span>
+error_log  /home/username/nginx/logs/error.log<span class="token punctuation">;</span>
+error_log  /home/username/nginx/logs/notice.log  notice<span class="token punctuation">;</span>
+error_log  /home/username/nginx/logs/info.log  info<span class="token punctuation">;</span>
+
+<span class="token comment">#PID文件，记录当前启动的nginx的进程ID</span>
+pid        /home/username/nginx/logs/pid/nginx.pid<span class="token punctuation">;</span>
+
+<span class="token comment">#工作模式及连接数上限</span>
+events <span class="token punctuation">{</span>
+    worker_connections <span class="token number">1024</span><span class="token punctuation">;</span>    <span class="token comment">#单个后台worker process进程的最大并发链接数</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">#设定http服务器，利用它的反向代理功能提供负载均衡支持</span>
+http <span class="token punctuation">{</span>
+    <span class="token comment">#设定mime类型(邮件支持类型),类型由mime.types文件定义</span>
+    include       /etc/nginx/mime.types<span class="token punctuation">;</span>
+    default_type  application/octet-stream<span class="token punctuation">;</span>
+
+    <span class="token comment">#设定日志</span>
+	log_format  main  <span class="token string">'[$remote_addr] - [$remote_user] [$time_local] &quot;$request&quot; '</span>
+                      <span class="token string">'$status $body_bytes_sent &quot;$http_referer&quot; '</span>
+                      <span class="token string">'&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;'</span><span class="token punctuation">;</span>
+
+    access_log    /home/username/nginx/logs/access.log main<span class="token punctuation">;</span>
+    rewrite_log     on<span class="token punctuation">;</span>
+
+    <span class="token comment">#sendfile 指令指定 nginx 是否调用 sendfile 函数（zero copy 方式）来输出文件，对于普通应用，</span>
+    <span class="token comment">#必须设为 on,如果用来进行下载等应用磁盘IO重负载应用，可设置为 off，以平衡磁盘与网络I/O处理速度，降低系统的uptime.</span>
+    sendfile        on<span class="token punctuation">;</span>
+    <span class="token comment">#tcp_nopush     on;</span>
+
+    <span class="token comment">#连接超时时间</span>
+    keepalive_timeout  <span class="token number">120</span><span class="token punctuation">;</span>
+    tcp_nodelay        on<span class="token punctuation">;</span>
+
+	<span class="token comment">#gzip压缩开关</span>
+	<span class="token comment">#gzip  on;</span>
+
+    <span class="token comment">#设定实际的服务器列表</span>
+    upstream zp_server1<span class="token punctuation">{</span>
+        server <span class="token number">127.0</span>.0.1:8889<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">#HTTP服务器</span>
+    server <span class="token punctuation">{</span>
+        <span class="token comment">#监听80端口，80端口是知名端口号，用于HTTP协议</span>
+        listen       <span class="token number">80</span><span class="token punctuation">;</span> 
+
+        <span class="token comment">#定义使用域名访问</span>
+        server_name  helloworld.test<span class="token punctuation">;</span>
+
+		<span class="token comment">#首页</span>
+		index index.html
+
+		<span class="token comment">#指向webapp的目录</span>
+		root /home/pi/nginx/content/<span class="token punctuation">;</span>
+
+		<span class="token comment">#编码格式</span>
+		charset utf-8<span class="token punctuation">;</span>
+
+		<span class="token comment">#代理配置参数</span>
+        proxy_connect_timeout <span class="token number">180</span><span class="token punctuation">;</span>
+        proxy_send_timeout <span class="token number">180</span><span class="token punctuation">;</span>
+        proxy_read_timeout <span class="token number">180</span><span class="token punctuation">;</span>
+        proxy_set_header Host <span class="token variable">$host</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forwarder-For <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+
+        <span class="token comment">#反向代理的路径（和upstream绑定），location 后面设置映射的路径</span>
+        location / <span class="token punctuation">{</span>
+            proxy_pass http://zp_server1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">#静态文件，nginx自己处理</span>
+        <span class="token comment"># location ~ ^/(images|javascript|js|css|flash|media|static)/ {</span>
+            <span class="token comment">#root D:\01_Workspace\Project\github\zp\SpringNotes\spring-security\spring-shiro\src\main\webapp\views;</span>
+            <span class="token comment">#过期30天，静态文件不怎么更新，过期可以设大一点，如果频繁更新，则可以设置得小一点。</span>
+           <span class="token comment"># expires 30d;</span>
+       <span class="token comment"># }</span>
+
+        <span class="token comment">#设定查看Nginx状态的地址</span>
+        location /NginxStatus <span class="token punctuation">{</span>
+            stub_status           on<span class="token punctuation">;</span>
+            access_log            on<span class="token punctuation">;</span>
+            auth_basic            <span class="token string">&quot;NginxStatus&quot;</span><span class="token punctuation">;</span>
+            auth_basic_user_file  conf/htpasswd<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">#禁止访问 .htxxx 文件</span>
+        location ~ /<span class="token punctuation">\</span>.ht <span class="token punctuation">{</span>
+            deny all<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+		<span class="token comment">#错误处理页面（可选择性配置）</span>
+		<span class="token comment">#error_page   404              /404.html;</span>
+		<span class="token comment">#error_page   500 502 503 504  /50x.html;</span>
+        <span class="token comment">#location = /50x.html {</span>
+        <span class="token comment">#    root   html;</span>
+        <span class="token comment">#}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br></div></div><p>在客户端设置(windows)host:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>192.168.2.111 helloworld.test
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>​	服务端启动godoc：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>godoc -http<span class="token operator">=</span><span class="token number">127.0</span>.0.1:8889
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><img src="/image/nginx/reverse-proxy-test.png" alt=""></p> <p>可以看到访问<code>helloworld.test</code>   的请求被代理到了<code>127.0.0.1:8889</code>,客户端看到的是godoc的页面</p> <h3 id="https-反向代理"><a href="#https-反向代理" class="header-anchor">#</a> Https 反向代理</h3> <p>一些安全性要求较高的站点会使用HTTPS协议，nginx配置Https和Http有所不同：</p> <ul><li>Https 固定端口号为443,Http为80</li> <li>SSL需要引入证书，需要在nginx中配置证书和对应的key</li></ul> <p>其他配置和http类似，<code>server</code> 部分有所不同</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment">#HTTP服务器</span>
+  server <span class="token punctuation">{</span>
+      <span class="token comment">#监听443端口。443为知名端口号，主要用于HTTPS协议</span>
+      listen       <span class="token number">443</span> ssl<span class="token punctuation">;</span>
+
+      <span class="token comment">#定义使用域名访问</span>
+      server_name  helloworld.test<span class="token punctuation">;</span>
+
+      <span class="token comment">#ssl证书文件位置(常见证书文件格式为：crt/pem)</span>
+      ssl_certificate      cert.pem<span class="token punctuation">;</span>
+      <span class="token comment">#ssl证书key位置</span>
+      ssl_certificate_key  cert.key<span class="token punctuation">;</span>
+
+      <span class="token comment">#ssl配置参数（选择性配置）</span>
+      ssl_session_cache    shared:SSL:1m<span class="token punctuation">;</span>
+      ssl_session_timeout  5m<span class="token punctuation">;</span>
+      <span class="token comment">#数字签名，此处使用MD5</span>
+      ssl_ciphers  HIGH:<span class="token operator">!</span>aNULL:<span class="token operator">!</span>MD5<span class="token punctuation">;</span>
+      ssl_prefer_server_ciphers  on<span class="token punctuation">;</span>
+
+      location / <span class="token punctuation">{</span>
+          root   /root<span class="token punctuation">;</span>
+          index  index.html index.htm<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="负载均衡"><a href="#负载均衡" class="header-anchor">#</a> 负载均衡</h2> <p>大多数情况下生产环境服务会以集群的方式运行，此时需要负载均衡来分流，nginx可以实现简单的负载均衡功能</p> <p><img src="/image/nginx/nginx-load-balance.png" alt=""></p> <p>假设一个场景：</p> <p>应用部署在三台服务器中：192.168.1.11:80、192.168.1.12:80、192.168.1.13:80 ,网站域名为<code>www.helloworld.com</code>，公网IP为<code>192.168.1.11</code>,在公网IP所在的服务器上部署nginx，对所有请求做负载均衡处理（下例使用加权轮询策略）</p> <p>配置如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>http <span class="token punctuation">{</span>
+     <span class="token comment">#设定mime类型,类型由mime.type文件定义</span>
+    include       /etc/nginx/mime.types<span class="token punctuation">;</span>
+    default_type  application/octet-stream<span class="token punctuation">;</span>
+    <span class="token comment">#设定日志格式</span>
+    access_log    /var/log/nginx/access.log<span class="token punctuation">;</span>
+
+    <span class="token comment">#设定负载均衡的服务器列表</span>
+    upstream load_balance_server <span class="token punctuation">{</span>
+        <span class="token comment">#weigth参数表示权值，权值越高被分配到的几率越大</span>
+        server <span class="token number">192.168</span>.1.11:80   <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+        server <span class="token number">192.168</span>.1.12:80   <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        server <span class="token number">192.168</span>.1.13:80   <span class="token assign-left variable">weight</span><span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+   <span class="token comment">#HTTP服务器</span>
+   server <span class="token punctuation">{</span>
+        <span class="token comment">#侦听80端口</span>
+        listen       <span class="token number">80</span><span class="token punctuation">;</span>
+
+        <span class="token comment">#定义使用www.xx.com访问</span>
+        server_name  www.helloworld.com<span class="token punctuation">;</span>
+
+        <span class="token comment">#对所有请求进行负载均衡请求</span>
+        location / <span class="token punctuation">{</span>
+            root        /root<span class="token punctuation">;</span>                 <span class="token comment">#定义服务器的默认网站根目录位置</span>
+            index       index.html index.htm<span class="token punctuation">;</span>  <span class="token comment">#定义首页索引文件的名称</span>
+            proxy_pass  http://load_balance_server <span class="token punctuation">;</span><span class="token comment">#请求转向load_balance_server 定义的服务器列表</span>
+
+            <span class="token comment">#以下是一些反向代理的配置(可选择性配置)</span>
+            <span class="token comment">#proxy_redirect off;</span>
+            proxy_set_header Host <span class="token variable">$host</span><span class="token punctuation">;</span>
+            proxy_set_header X-Real-IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+            <span class="token comment">#后端的Web服务器可以通过X-Forwarded-For获取用户真实IP</span>
+            proxy_set_header X-Forwarded-For <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+            proxy_connect_timeout <span class="token number">90</span><span class="token punctuation">;</span>          <span class="token comment">#nginx跟后端服务器连接超时时间(代理连接超时)</span>
+            proxy_send_timeout <span class="token number">90</span><span class="token punctuation">;</span>             <span class="token comment">#后端服务器数据回传时间(代理发送超时)</span>
+            proxy_read_timeout <span class="token number">90</span><span class="token punctuation">;</span>             <span class="token comment">#连接成功后，后端服务器响应时间(代理接收超时)</span>
+            proxy_buffer_size 4k<span class="token punctuation">;</span>              <span class="token comment">#设置代理服务器（nginx）保存用户头信息的缓冲区大小</span>
+            proxy_buffers <span class="token number">4</span> 32k<span class="token punctuation">;</span>               <span class="token comment">#proxy_buffers缓冲区，网页平均在32k以下的话，这样设置</span>
+            proxy_busy_buffers_size 64k<span class="token punctuation">;</span>       <span class="token comment">#高负荷下缓冲大小（proxy_buffers*2）</span>
+            proxy_temp_file_write_size 64k<span class="token punctuation">;</span>    <span class="token comment">#设定缓存文件夹大小，大于这个值，将从upstream服务器传</span>
+
+            client_max_body_size 10m<span class="token punctuation">;</span>          <span class="token comment">#允许客户端请求的最大单文件字节数</span>
+            client_body_buffer_size 128k<span class="token punctuation">;</span>      <span class="token comment">#缓冲区代理缓冲用户端请求的最大字节数</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br></div></div><h3 id="负载均衡策略"><a href="#负载均衡策略" class="header-anchor">#</a> 负载均衡策略</h3> <p>Nginx提供了多种负载均衡策略：</p> <ul><li><p>轮询，权重均为1：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>upstream bck_testing_01 {
+  # 默认所有服务器权重为 1
+  server 192.168.250.220:8080
+  server 192.168.250.221:8080
+  server 192.168.250.222:8080
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div></li> <li><p>加权轮询,可自定义权重：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>upstream bck_testing_01 {
+  server 192.168.250.220:8080   weight=3
+  server 192.168.250.221:8080              # default weight=1
+  server 192.168.250.222:8080              # default weight=1
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div></li> <li><p>最少连接：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>upstream bck_testing_01 {
+  least_conn;
+
+  # with default weight for all (weight=1)
+  server 192.168.250.220:8080
+  server 192.168.250.221:8080
+  server 192.168.250.222:8080
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></li> <li><p>加权最少连接：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>upstream bck_testing_01 {
+  least_conn;
+
+  server 192.168.250.220:8080   weight=3
+  server 192.168.250.221:8080              # default weight=1
+  server 192.168.250.222:8080              # default weight=1
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div></li> <li><p>IP Hash：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>upstream bck_testing_01 {
+
+  ip_hash;
+
+  # with default weight for all (weight=1)
+  server 192.168.250.220:8080
+  server 192.168.250.221:8080
+  server 192.168.250.222:8080
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></li> <li><p>普通Hash</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>upstream bck_testing_01 {
+
+  hash $request_uri;
+
+  # with default weight for all (weight=1)
+  server 192.168.250.220:8080
+  server 192.168.250.221:8080
+  server 192.168.250.222:8080
+
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></li></ul> <h2 id="多个webapp配置"><a href="#多个webapp配置" class="header-anchor">#</a> 多个Webapp配置</h2> <p>当网站内容较多时，往往需要模块独立出来，独立维护，此时就会有多个App</p> <p>例如：</p> <p><code>helloworld.com</code>有三个<code>webapp</code>,finance,product,admin,通过上下文(context)来进行访问：</p> <ul><li><code>helloworld.com\product</code></li> <li><code>helloworld.com\finance</code></li> <li><code>helloworld.com\admin</code></li></ul> <p>http默认的端口号为80，在一台服务器上不能以80端口同时启动三个webapp；用户实际访问时也不能加上端口号来调用不同的webapp，此时就需要用到反向代理</p> <p>配置如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>http {
+	#此处省略一些基本配置
+
+	upstream product_server{
+		server www.helloworld.com:8081;
+	}
+
+	upstream admin_server{
+		server www.helloworld.com:8082;
+	}
+
+	upstream finance_server{
+		server www.helloworld.com:8083;
+	}
+
+	server {
+		#此处省略一些基本配置
+		#默认指向product的server
+		location / {
+			proxy_pass http://product_server;
+		}
+
+		location /product/{
+			proxy_pass http://product_server;
+		}
+
+		location /admin/ {
+			proxy_pass http://admin_server;
+		}
+
+		location /finance/ {
+			proxy_pass http://finance_server;
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><h2 id="静态站点"><a href="#静态站点" class="header-anchor">#</a> 静态站点</h2> <p>有时需要配置静态站点（html文件和静态资源）</p> <p>例如：所有的静态资源放在了<code>app/dist</code>下，需要在nginx中配置：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>worker_processes  1;
+
+events {
+	worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    gzip on;
+    gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/javascript image/jpeg image/gif image/png;
+    gzip_vary on;
+
+    server {
+		listen       80;
+		server_name  static.zp.cn;
+
+		location / {
+			root /app/dist;
+			index index.html;
+			#转发任何请求到 index.html
+		}
+	}
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h2 id="搭建文件服务器"><a href="#搭建文件服务器" class="header-anchor">#</a> 搭建文件服务器</h2> <p>有时团队需要归档一些数据或资料时，那么文件服务器必不可少，可以使用nginx快速搭建简易的文件服务</p> <p>配置要点：</p> <ul><li>将 autoindex 开启可以显示目录，默认不开启。</li> <li>将 autoindex_exact_size 开启可以显示文件的大小。</li> <li>将 autoindex_localtime 开启可以显示文件的修改时间。</li> <li>root 用来设置开放为文件服务的根路径。</li> <li>charset 设置为 <code>charset utf-8,gbk;</code>，可以避免中文乱码问题（windows 服务器下设置后，依然乱码，本人暂时没有找到解决方法）。</li></ul> <p>简化配置如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>autoindex on;# 显示目录
+autoindex_exact_size on;# 显示文件大小
+autoindex_localtime on;# 显示文件时间
+
+server {
+    charset      utf-8,gbk; 
+    listen       9050 default_server;
+    listen       [::]:9050 default_server;
+    server_name  _;
+    root         /share/fs;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="跨域问题"><a href="#跨域问题" class="header-anchor">#</a> 跨域问题</h2> <p>在web开发中，经常采用前后分离模式，各自独立的app互相访问时势必存在跨域问题,一般有两种方式解决：</p> <ul><li>CORS
+在后端服务器设置HTTP响应头，将允许访问的域名加入<code>Access-Control-Allow-Origin</code>中</li> <li>JSONP
+<strong>JSON with Padding</strong>是<a href="https://zh.wikipedia.org/wiki/JSON" target="_blank" rel="noopener noreferrer">JSON<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>的一种“使用模式”，可以让网页从别的网域获取资料</li></ul> <p>Nginx采用第一种思路解决跨域问题</p> <p>例如：<a href="http://www.helloworld.com/" target="_blank" rel="noopener noreferrer">www.helloworld.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 网站是由一个前端 app ，一个后端 app 组成的。前端端口号为 9000， 后端端口号为 8080，前端和后端如果使用 http 进行交互时，请求会被拒绝，因为存在跨域问题</p> <p>配置如下：</p> <p><code>enable-cors.conf</code></p> <div class="language- line-numbers-mode"><pre class="language-text"><code># allow origin list
+set $ACAO '*';
+
+# set single origin
+if ($http_origin ~* (www.helloworld.com)$) {
+  set $ACAO $http_origin;
+}
+
+if ($cors = &quot;trueget&quot;) {
+	add_header 'Access-Control-Allow-Origin' &quot;$http_origin&quot;;
+	add_header 'Access-Control-Allow-Credentials' 'true';
+	add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+	add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+}
+
+if ($request_method = 'OPTIONS') {
+  set $cors &quot;${cors}options&quot;;
+}
+
+if ($request_method = 'GET') {
+  set $cors &quot;${cors}get&quot;;
+}
+
+if ($request_method = 'POST') {
+  set $cors &quot;${cors}post&quot;;
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>在<code>nginx.conf</code>引入(<code>include enable-cors.conf</code>):</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># ----------------------------------------------------
+# 此文件为项目 nginx 配置片段
+# 可以直接在 nginx config 中 include（推荐）
+# 或者 copy 到现有 nginx 中，自行配置
+# www.helloworld.com 域名需配合 dns hosts 进行配置
+# 其中，api 开启了 cors，需配合本目录下另一份配置文件
+# ----------------------------------------------------
+upstream front_server{
+  server www.helloworld.com:9000;
+}
+upstream api_server{
+  server www.helloworld.com:8080;
+}
+
+server {
+  listen       80;
+  server_name  www.helloworld.com;
+
+  location ~ ^/api/ {
+    include enable-cors.conf;
+    proxy_pass http://api_server;
+    rewrite &quot;^/api/(.*)$&quot; /$1 break;
+  }
+
+  location ~ ^/ {
+    proxy_pass http://front_server;
+  }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="参考"><a href="#参考" class="header-anchor">#</a> 参考</h2> <ol><li><a href="https://github.com/dunwu/nginx-tutorial" target="_blank" rel="noopener noreferrer">Nginx 极简教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> github repo</li> <li><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="noopener noreferrer">前端常见跨域解决方案（全）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> segmentfault/安静de沉淀</li> <li><a href="http://tool.oschina.net/apidocs/apidoc?api=nginx-zh" target="_blank" rel="noopener noreferrer">Nginx 的中文维基<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://tengine.taobao.org/book/index.html" target="_blank" rel="noopener noreferrer">Nginx 开发从入门到精通<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/trimstray/nginx-admins-handbook" target="_blank" rel="noopener noreferrer">nginx-admins-handbook<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://nginxconfig.io/" target="_blank" rel="noopener noreferrer">nginxconfig.io<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>   Nginx 配置生成器</li></ol></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">11/1/2021, 5:36:04 PM</span></div></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-898d6c54><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#introduction-简介" class="sidebar-link reco-side-introduction-简介" data-v-898d6c54>Introduction 简介</a></li><li class="level-3" data-v-898d6c54><a href="/zh/nginx/nginx#反向代理" class="sidebar-link reco-side-反向代理" data-v-898d6c54>反向代理</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#开始使用" class="sidebar-link reco-side-开始使用" data-v-898d6c54>开始使用</a></li><li class="level-3" data-v-898d6c54><a href="/zh/nginx/nginx#http-反向代理" class="sidebar-link reco-side-http-反向代理" data-v-898d6c54>Http 反向代理</a></li><li class="level-3" data-v-898d6c54><a href="/zh/nginx/nginx#https-反向代理" class="sidebar-link reco-side-https-反向代理" data-v-898d6c54>Https 反向代理</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#负载均衡" class="sidebar-link reco-side-负载均衡" data-v-898d6c54>负载均衡</a></li><li class="level-3" data-v-898d6c54><a href="/zh/nginx/nginx#负载均衡策略" class="sidebar-link reco-side-负载均衡策略" data-v-898d6c54>负载均衡策略</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#多个webapp配置" class="sidebar-link reco-side-多个webapp配置" data-v-898d6c54>多个Webapp配置</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#静态站点" class="sidebar-link reco-side-静态站点" data-v-898d6c54>静态站点</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#搭建文件服务器" class="sidebar-link reco-side-搭建文件服务器" data-v-898d6c54>搭建文件服务器</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#跨域问题" class="sidebar-link reco-side-跨域问题" data-v-898d6c54>跨域问题</a></li><li class="level-2" data-v-898d6c54><a href="/zh/nginx/nginx#参考" class="sidebar-link reco-side-参考" data-v-898d6c54>参考</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><canvas id="vuepress-canvas-cursor"></canvas><div></div><div id="goTop" class="hide-cat" data-v-bf92849a></div><canvas id="vuepress-canvas-ribbon"></canvas></div></div>
+    <script src="/assets/js/app.b0311869.js" defer></script><script src="/assets/js/5.7cb2094f.js" defer></script><script src="/assets/js/1.7ee7f9d3.js" defer></script><script src="/assets/js/33.e2478c17.js" defer></script>
+  </body>
+</html>
