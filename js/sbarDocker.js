@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Docker',
   children: [
-    '/zh/docker/docker-tutorial/get-started',
-    '/zh/docker/docker-tutorial/docker-nginx',
+    '/zh/docker/get-started',
+    '/zh/docker/docker-nginx',
     {
       title: 'Docker practice',
       sidebarDepth: 2,
