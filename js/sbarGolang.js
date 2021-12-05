@@ -2,6 +2,9 @@ module.exports = {
   title: "Golang",
   children: [
     "/zh/golang/gin",
+    "/zh/golang/endless",
+    "/zh/golang/gorm",
+    "/zh/golang/go-jwt",
     {
       title: "Golang lib",
       // sidebarDepth: 2,
