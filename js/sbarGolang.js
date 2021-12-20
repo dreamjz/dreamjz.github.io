@@ -1,10 +1,30 @@
 module.exports = {
   title: "Golang",
   children: [
-    "/zh/golang/gin",
-    "/zh/golang/endless",
-    "/zh/golang/gorm",
-    "/zh/golang/go-jwt",
+    {
+      title: 'Gin blog',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/go-gin-blog/Preface',
+        '/zh/golang/go-gin-blog/01.1',
+        '/zh/golang/go-gin-blog/01.2',
+        '/zh/golang/go-gin-blog/01.3',
+      ],
+    },
+    {
+      title: 'Gorm',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/gorm/01.1',
+        '/zh/golang/gorm/01.2',
+        '/zh/golang/gorm/01.3',
+        '/zh/golang/gorm/01.4',
+        '/zh/golang/gorm/01.5',
+        '/zh/golang/gorm/gorm',
+      ],
+    },
     {
       title: "Golang lib",
       // sidebarDepth: 2,
@@ -28,5 +48,8 @@ module.exports = {
         "/zh/golang/golang-daily-lib/email",
       ],
     },
+    "/zh/golang/gin",
+    "/zh/golang/endless",
+    "/zh/golang/go-jwt",
   ],
 };
