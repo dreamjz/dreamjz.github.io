@@ -1,6 +1,16 @@
 module.exports = {
   title: "Golang",
   children: [
+    "/zh/golang/Preface",
+    {
+      title: 'Advanced Go Programming',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/AdvancedGoProgramming/Preface',
+        '/zh/golang/AdvancedGoProgramming/04.1',
+      ],
+    },
     {
       title: 'Gin blog',
       sidebarDepth: 2,
