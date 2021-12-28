@@ -10,6 +10,9 @@ const rpc = require('./programing/rpc');
 // reading notes
 const sidbarReading = require('./reading-note/sidebarReading');
 
+// language 
+const japanese = require('./lang/japanese')
+
 module.exports = {
   sidebar: {
     '/reading-note/': [
@@ -30,6 +33,15 @@ module.exports = {
       sidbarReading.IntroductionToAlgorithm,
       sidbarReading.DataStructureTutorial,
       sidbarReading.shellScriptingBible,
+    ],
+    '/lang/': [
+      {
+        title: 'Welcome',
+        sidebarDepth: 2,
+        collapsable: true,
+        path: '/lang/',
+      },
+      japanese,
     ],
     '/zh/': [
       {
