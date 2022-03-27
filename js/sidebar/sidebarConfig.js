@@ -6,6 +6,7 @@ const sidebarDocker = require('./programing/sbarDocker');
 const sidebarFrontEnd = require('./programing/sbarFrontEnd');
 const sidebarRaspi = require('./programing/sbarRaspi');
 const rpc = require('./programing/rpc');
+const sidebarLeetCode = require('./programing/sbarLeetCode');
 
 // reading notes
 const sidbarReading = require('./reading-note/sidebarReading');
@@ -22,6 +23,7 @@ module.exports = {
         collapsable: true,
         path: '/reading-note/',
       },
+      sidbarReading.algorithmsInC,
       sidbarReading.concurrencyInGo,
       sidbarReading.vbirdLinuxBasic,
       sidbarReading.vbirdLinuxServer,
@@ -50,7 +52,9 @@ module.exports = {
         collapsable: true,
         path: '/zh/',
       },
+      'retaining_computer_science_knowledge',
       sidebarGolang,
+      sidebarLeetCode,
       rpc,
       sidebarLinux,
       sidebarNginx,

@@ -65,6 +65,6 @@ module.exports = {
     '/zh/golang/endless',
     '/zh/golang/go-jwt',
     '/zh/golang/uber-go-zap/01.1',
-
+    '/zh/golang/concurrency/GMPModel',
   ],
 };

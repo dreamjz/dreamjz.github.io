@@ -1,4 +1,36 @@
 module.exports = {
+  algorithmsInC: {
+    title: 'Algorithms In C',
+    sidebarDepth: 2,
+    collapsable: true,
+    children: [
+      {
+        title: '01. Fundamentals',
+        sidebarDepth: 2,
+        collapsable: true,
+        children: [
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/01_fundamentals/01.0',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/01_fundamentals/01.1',
+        ],
+      },
+      {
+        title: '02. Data Structures',
+        sidebarDepth: 2,
+        collapsable: true,
+        children: [
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.0',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.1',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.2',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.3',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.4',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.5',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.6',
+          '/reading-note/Algorithm/algorithms_in_c_part_1-4/02_data_structures/03.7',
+        ],
+      },
+    ],
+  },
   concurrencyInGo: {
     title: 'Concurrency in Go',
     sidebarDepth: 2,

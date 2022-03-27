@@ -49,6 +49,10 @@ module.exports = {
             tasklist: true,
             // 启用流程图
             flowchart: true,
+            // 启用下角标功能
+            sub: true,
+            // 启用上角标
+            sup: true,
           },
         ],
         [
