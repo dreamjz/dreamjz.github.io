@@ -77,7 +77,13 @@ module.exports = {
     title: 'Redis 设计与实现',
     sidebarDepth: 2,
     collapsable: true,
-    children: [],
+    children: [
+      '/reading-note/NoSQL/The_Design_and_Implementation_of_Redis/preface.md',
+      '/reading-note/NoSQL/The_Design_and_Implementation_of_Redis/01.md',
+      '/reading-note/NoSQL/The_Design_and_Implementation_of_Redis/01.1.md',
+      '/reading-note/NoSQL/The_Design_and_Implementation_of_Redis/01.2.md',
+      '/reading-note/NoSQL/The_Design_and_Implementation_of_Redis/01.3.md',
+    ],
   },
   SQLCookbook: {
     title: 'SQL Cookbook',

@@ -23,6 +23,7 @@ module.exports = {
         collapsable: true,
         path: '/reading-note/',
       },
+      'indexes',
       sidbarReading.algorithmsInC,
       sidbarReading.concurrencyInGo,
       sidbarReading.vbirdLinuxBasic,
@@ -52,7 +53,7 @@ module.exports = {
         collapsable: true,
         path: '/zh/',
       },
-      'retaining_computer_science_knowledge',
+      'indexes',
       sidebarGolang,
       sidebarLeetCode,
       rpc,
@@ -61,6 +62,14 @@ module.exports = {
       sidebarDocker,
       sidebarRaspi,
       sidebarFrontEnd,
+      {
+        title: 'Learning Method',
+        sidebarDepth: 2,
+        collapsable: true,
+        children: [
+          'retaining_computer_science_knowledge',
+        ]
+      }
     ],
   },
 };

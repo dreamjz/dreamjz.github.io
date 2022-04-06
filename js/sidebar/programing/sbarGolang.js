@@ -2,18 +2,7 @@ module.exports = {
   title: 'Golang',
   children: [
     '/zh/golang/Preface',
-    {
-      title: 'Advanced Go Programming',
-      sidebarDepth: 2,
-      collapsable: true,
-      children: [
-        '/zh/golang/AdvancedGoProgramming/Preface',
-        '/zh/golang/AdvancedGoProgramming/04.1',
-        '/zh/golang/AdvancedGoProgramming/04.2',
-        '/zh/golang/AdvancedGoProgramming/04.3',
-        '/zh/golang/AdvancedGoProgramming/04.4',
-      ],
-    },
+    // My Projects
     {
       title: 'Gin blog',
       sidebarDepth: 2,
@@ -25,6 +14,33 @@ module.exports = {
         '/zh/golang/go-gin-blog/01.3',
       ],
     },
+    // Open Source Books
+    {
+      title: 'The Design and Implementation of Golang',
+      collapsable: true,
+      children: [
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/summary',
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/preface',
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/01.1',
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/03.1',
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/03.2',
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/03.3',
+        '/zh/golang/open-source-books/The-Design-and-Implementation-of-Golang/03.4',
+      ],
+    },
+    {
+      title: 'Advanced Go Programming',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/open-source-books/advanced-go-programming/Preface',
+        '/zh/golang/open-source-books/advanced-go-programming/04.1',
+        '/zh/golang/open-source-books/advanced-go-programming/04.2',
+        '/zh/golang/open-source-books/advanced-go-programming/04.3',
+        '/zh/golang/open-source-books/advanced-go-programming/04.4',
+      ],
+    },
+    // 3rd-Library 
     {
       title: 'Gorm',
       sidebarDepth: 2,
@@ -65,6 +81,24 @@ module.exports = {
     '/zh/golang/endless',
     '/zh/golang/go-jwt',
     '/zh/golang/uber-go-zap/01.1',
+    {
+      title: 'Minidb',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/github-repos/flower-corp/minidb/preface',
+        '/zh/golang/github-repos/flower-corp/minidb/minidb',
+      ],
+    },
+    {
+      title: '7Days-Golang',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/github-repos/7days-golang/preface',
+        '/zh/golang/github-repos/7days-golang/gee-web',
+      ],
+    },
     '/zh/golang/concurrency/GMPModel',
   ],
 };
