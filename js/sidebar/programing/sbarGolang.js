@@ -40,6 +40,17 @@ module.exports = {
         '/zh/golang/open-source-books/advanced-go-programming/04.4',
       ],
     },
+    {
+      title: 'High Performance Go',
+      sidebarDepth: 2,
+      collapsable: true,
+      children: [
+        '/zh/golang/open-source-books/high-performance-go/summary',
+        '/zh/golang/open-source-books/high-performance-go/preface',
+        '/zh/golang/open-source-books/high-performance-go/performance-analysis/benchmark',
+        '/zh/golang/open-source-books/high-performance-go/performance-analysis/pprof',
+      ],
+    },
     // 3rd-Library 
     {
       title: 'Gorm',
