@@ -69,6 +69,17 @@ module.exports = {
         children: [
           'retaining_computer_science_knowledge',
         ]
+      },
+      {
+        title: 'Interviews',
+        sidebarDepth: 2,
+        collapsable: true,
+        children: [
+          '/zh/interviews/Golang/golang',
+          '/zh/interviews/MySQL/mysql',
+          '/zh/interviews/Network/network',
+          '/zh/interviews/Redis/redis',
+        ]
       }
     ],
   },
