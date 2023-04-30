@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-89bbd888","path":"/reading/algorithm/","title":"Algorithm","lang":"zh-CN","frontmatter":{"title":"Algorithm","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

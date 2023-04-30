@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3de926ea","path":"/en/tag/small/","title":"small Tag","lang":"zh-CN","frontmatter":{"title":"small Tag","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"small","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

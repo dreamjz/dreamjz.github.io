@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-260ce97e","path":"/reading/nosql/","title":"Nosql","lang":"zh-CN","frontmatter":{"title":"Nosql","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

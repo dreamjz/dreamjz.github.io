@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-9717cc36","path":"/category/mysql/","title":"mysql 分类","lang":"zh-CN","frontmatter":{"title":"mysql 分类","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"mysql","key":"category"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

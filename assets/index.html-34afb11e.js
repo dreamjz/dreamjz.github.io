@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3c599b43","path":"/en/tag/round/","title":"round Tag","lang":"zh-CN","frontmatter":{"title":"round Tag","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"round","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

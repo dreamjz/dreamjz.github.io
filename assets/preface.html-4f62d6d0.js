@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-51b6bdfa","path":"/leetcode/preface.html","title":"Preface","lang":"zh-CN","frontmatter":{"title":"Preface","date":"2022-01-27T00:00:00.000Z","timeline":false},"headers":[],"readingTime":{"minutes":0.04,"words":13},"filePathRelative":"leetcode/preface.md","localizedDate":"2022年1月27日","excerpt":"<p>LeetCode 学习笔记</p>\\n"}');export{e as data};

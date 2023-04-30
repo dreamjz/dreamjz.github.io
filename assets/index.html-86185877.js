@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-65f6a00e","path":"/note/rpc/","title":"Rpc","lang":"zh-CN","frontmatter":{"title":"Rpc","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

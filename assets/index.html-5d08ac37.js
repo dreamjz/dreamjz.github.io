@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-287f3643","path":"/tag/grpc/","title":"grpc 标签","lang":"zh-CN","frontmatter":{"title":"grpc 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"grpc","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

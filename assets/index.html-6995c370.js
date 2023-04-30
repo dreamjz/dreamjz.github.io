@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4b0ad344","path":"/tag/vue-cli/","title":"vue-cli 标签","lang":"zh-CN","frontmatter":{"title":"vue-cli 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"vue-cli","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

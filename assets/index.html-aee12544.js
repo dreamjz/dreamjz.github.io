@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2ae80a11","path":"/en/tag/long/","title":"long Tag","lang":"zh-CN","frontmatter":{"title":"long Tag","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"long","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-008537c4","path":"/note/golang/github-repos/flower-corp/minidb/","title":"Minidb","lang":"zh-CN","frontmatter":{"title":"Minidb","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

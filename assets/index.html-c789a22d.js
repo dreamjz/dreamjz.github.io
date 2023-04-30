@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-a0d528ce","path":"/en/tag/yellow/","title":"yellow Tag","lang":"zh-CN","frontmatter":{"title":"yellow Tag","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"yellow","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};
