@@ -1,1 +1,0 @@
-import{_ as t,Y as n,Z as s,$ as e}from"./framework-d955655f.js";const c={},o=e("div",{class:"hint-container tip"},[e("p",{class:"hint-container-title"},"(≧∇≦)ﾉ"),e("p",null,"今朝のブログへよこそう!ヾ(≧▽≦*)o")],-1),_=e("p",null,"本页将会将把外语笔记记录再此~",-1),i=[o,_];function l(a,r){return n(),s("div",null,i)}const h=t(c,[["render",l],["__file","index.html.vue"]]);export{h as default};
