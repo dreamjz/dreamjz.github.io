@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-43e50cbd","path":"/blog/algorithm/sort/","title":"Sort","lang":"zh-CN","frontmatter":{"title":"Sort","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
