@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6afb496d","path":"/reading/golang/the-design-and-implementation-of-golang/part2-foundation/ch05-keyword/","title":"Ch05 Keyword","lang":"zh-CN","frontmatter":{"title":"Ch05 Keyword","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
