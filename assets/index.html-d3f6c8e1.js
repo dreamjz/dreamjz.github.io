@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-bc1b8554","path":"/reading/golang/concurrency-in-go/","title":"Concurrency in Go","lang":"zh-CN","frontmatter":{"title":"Concurrency in Go","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
