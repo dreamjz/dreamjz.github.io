@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-717e6b38","path":"/reading/golang/7-days-golang/02-GeeCache-DitributedCache/","title":"02 Gee Cache Ditributed Cache","lang":"zh-CN","frontmatter":{"title":"02 Gee Cache Ditributed Cache","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
