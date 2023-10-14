@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <script src="wasm_exec.js"></script>
 <script>
+
+// >>> 从本地读取     
 // Polyfill
-if (!WebAssembly.instantiateStreaming) {
-    WebAssembly.instantiateStreaming = async (resp, importObject) => {
+// if (!WebAssembly.instantiateStreaming) {
+//     WebAssembly.instantiateStreaming = async (resp, importObject) => {
+//         const source = await (await resp).arrayBuffer();
+//         return await WebAssembly.instantiate(source, importObject);
+//     };
+// }
+
+// const go = new Go();
+// WebAssembly.instantiateStreaming(fetch("https://raw.githubusercontent.com/dreamjz/pics/main/wasm/ebiten_breakout.wasm"), go.importObject).then(result => {
+//     go.run(result.instance);
+// });
+
+// >>> 将 wasm 放在 GitHub 上
+// Polyfill
+WebAssembly.instantiateStreaming = async (resp, importObject) => {
         const source = await (await resp).arrayBuffer();
         return await WebAssembly.instantiate(source, importObject);
-    };
-}
+};
 
 const go = new Go();
-WebAssembly.instantiateStreaming(fetch("ebiten_breakout.wasm"), go.importObject).then(result => {
+WebAssembly.instantiateStreaming(fetch("https://raw.githubusercontent.com/dreamjz/pics/main/wasm/ebiten_breakout.wasm"), go.importObject).then(result => {
     go.run(result.instance);
 });
+
+
 </script>
