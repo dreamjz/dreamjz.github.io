@@ -1,0 +1,138 @@
+import{_ as p,Z as o,$ as c,a0 as n,a1 as s,a2 as e,a3 as t,H as l}from"./framework-09afcf0b.js";const i={},r=t(`<h2 id="_1-数据结构" tabindex="-1"><a class="header-anchor" href="#_1-数据结构" aria-hidden="true">#</a> 1. 数据结构</h2><p><code>runtime._defer</code>是延迟调用链表上的元素，所有的<code>runtime._defer</code>构成一个单向链表。</p><figure><img src="https://raw.githubusercontent.com/dreamjz/pics/main/pics/2023/202309281816189.png" alt="golang-defer-link" tabindex="0" loading="lazy"><figcaption>golang-defer-link</figcaption></figure><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">type</span> _defer <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+	started   <span class="token builtin">bool</span>
+	openDefer <span class="token builtin">bool</span>
+	sp        <span class="token builtin">uintptr</span> <span class="token comment">// sp at time of defer</span>
+	pc        <span class="token builtin">uintptr</span> <span class="token comment">// pc at time of defer</span>
+	fn        <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// can be nil for open-coded defers</span>
+	_panic    <span class="token operator">*</span>_panic <span class="token comment">// panic that is running defer</span>
+	link      <span class="token operator">*</span>_defer <span class="token comment">// next defer on G; can point to either heap or stack!</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><code>sp</code>：栈指针</li><li><code>pc</code>：程序计数器</li><li><code>fn</code>：<code>defer</code>语句中传入的函数</li><li><code>_panic</code>：触发延迟调用的 panic</li><li><code>openDefer</code>：是否经过开放编码优化</li></ul><h2 id="_2-内存分配" tabindex="-1"><a class="header-anchor" href="#_2-内存分配" aria-hidden="true">#</a> 2. 内存分配</h2><p>Golang 会根据 <code>defer</code> 语句的函数决定不同的内存分配方式：</p><ul><li>堆上分配</li><li>栈上分配</li><li>开放编码</li></ul><h2 id="_3-创建-defer" tabindex="-1"><a class="header-anchor" href="#_3-创建-defer" aria-hidden="true">#</a> 3. 创建 defer</h2><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Create a new deferred function fn, which has no arguments and results.</span>
+<span class="token comment">// The compiler turns a defer statement into a call to this.</span>
+<span class="token keyword">func</span> <span class="token function">deferproc</span><span class="token punctuation">(</span>fn <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	gp <span class="token operator">:=</span> <span class="token function">getg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> gp<span class="token punctuation">.</span>m<span class="token punctuation">.</span>curg <span class="token operator">!=</span> gp <span class="token punctuation">{</span>
+		<span class="token comment">// go code on the system stack can&#39;t defer</span>
+		<span class="token function">throw</span><span class="token punctuation">(</span><span class="token string">&quot;defer on system stack&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+
+	d <span class="token operator">:=</span> <span class="token function">newdefer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> d<span class="token punctuation">.</span>_panic <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token function">throw</span><span class="token punctuation">(</span><span class="token string">&quot;deferproc: d.panic != nil after newdefer&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	d<span class="token punctuation">.</span>link <span class="token operator">=</span> gp<span class="token punctuation">.</span>_defer
+	gp<span class="token punctuation">.</span>_defer <span class="token operator">=</span> d
+	d<span class="token punctuation">.</span>fn <span class="token operator">=</span> fn
+	d<span class="token punctuation">.</span>pc <span class="token operator">=</span> <span class="token function">getcallerpc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">// We must not be preempted between calling getcallersp and</span>
+	<span class="token comment">// storing it to d.sp because getcallersp&#39;s result is a</span>
+	<span class="token comment">// uintptr stack pointer.</span>
+	d<span class="token punctuation">.</span>sp <span class="token operator">=</span> <span class="token function">getcallersp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+	<span class="token comment">// deferproc returns 0 normally.</span>
+	<span class="token comment">// a deferred func that stops a panic</span>
+	<span class="token comment">// makes the deferproc return 1.</span>
+	<span class="token comment">// the code the compiler generates always</span>
+	<span class="token comment">// checks the return value and jumps to the</span>
+	<span class="token comment">// end of the function if deferproc returns != 0.</span>
+	<span class="token function">return0</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token comment">// No code can go here - the C return register has</span>
+	<span class="token comment">// been set and must not be clobbered.</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li><code>newdefer()</code>：获取 <code>defer</code>结构体</li><li>设置相关字段</li></ul><h3 id="获取-defer-结构体" tabindex="-1"><a class="header-anchor" href="#获取-defer-结构体" aria-hidden="true">#</a> 获取 <code>defer</code> 结构体</h3><p><code>runtime.newdefer</code>有三种方式获取<code>runtime._defer</code>结构体：</p>`,13),u=n("li",null,[s("调度器的延迟调用缓存池 "),n("code",null,"sched.deferpool"),s(" 中取出结构体并将该结构体追加到当前 Goroutine 的缓存池中")],-1),d=n("li",null,[s("从 Goroutine 的延迟调用缓存池 "),n("code",null,"pp.deferpool"),s(" 中取出结构体")],-1),k={href:"https://draveness.me/golang/tree/runtime.mallocgc",target:"_blank",rel:"noopener noreferrer"},m=n("code",null,"runtime.mallocgc",-1),v=t(`<p>获取到的<code>runtime._defeer</code>会被追加到<code>defer</code>链表的 head 位置。</p><figure><img src="https://raw.githubusercontent.com/dreamjz/pics/main/pics/2023/202309281831545.png" alt="golang-new-defer" tabindex="0" loading="lazy"><figcaption>golang-new-defer</figcaption></figure><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Allocate a Defer, usually using per-P pool.</span>
+<span class="token comment">// Each defer must be released with freedefer.  The defer is not</span>
+<span class="token comment">// added to any defer chain yet.</span>
+<span class="token keyword">func</span> <span class="token function">newdefer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span>_defer <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> d <span class="token operator">*</span>_defer
+	mp <span class="token operator">:=</span> <span class="token function">acquirem</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	pp <span class="token operator">:=</span> mp<span class="token punctuation">.</span>p<span class="token punctuation">.</span><span class="token function">ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> sched<span class="token punctuation">.</span>deferpool <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token function">lock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sched<span class="token punctuation">.</span>deferlock<span class="token punctuation">)</span>
+		<span class="token keyword">for</span> <span class="token function">len</span><span class="token punctuation">(</span>pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token function">cap</span><span class="token punctuation">(</span>pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span> <span class="token operator">&amp;&amp;</span> sched<span class="token punctuation">.</span>deferpool <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			d <span class="token operator">:=</span> sched<span class="token punctuation">.</span>deferpool
+			sched<span class="token punctuation">.</span>deferpool <span class="token operator">=</span> d<span class="token punctuation">.</span>link
+			d<span class="token punctuation">.</span>link <span class="token operator">=</span> <span class="token boolean">nil</span>
+			pp<span class="token punctuation">.</span>deferpool <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">,</span> d<span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		<span class="token function">unlock</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sched<span class="token punctuation">.</span>deferlock<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> n <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">)</span><span class="token punctuation">;</span> n <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+		d <span class="token operator">=</span> pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+		pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">[</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">nil</span>
+		pp<span class="token punctuation">.</span>deferpool <span class="token operator">=</span> pp<span class="token punctuation">.</span>deferpool<span class="token punctuation">[</span><span class="token punctuation">:</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+	<span class="token punctuation">}</span>
+	<span class="token function">releasem</span><span class="token punctuation">(</span>mp<span class="token punctuation">)</span>
+	mp<span class="token punctuation">,</span> pp <span class="token operator">=</span> <span class="token boolean">nil</span><span class="token punctuation">,</span> <span class="token boolean">nil</span>
+
+	<span class="token keyword">if</span> d <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token comment">// Allocate new defer.</span>
+		d <span class="token operator">=</span> <span class="token function">new</span><span class="token punctuation">(</span>_defer<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	d<span class="token punctuation">.</span>heap <span class="token operator">=</span> <span class="token boolean">true</span>
+	<span class="token keyword">return</span> d
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="执行顺序" tabindex="-1"><a class="header-anchor" href="#执行顺序" aria-hidden="true">#</a> 执行顺序</h3><p>对于<code>defer</code>链表，新元素插入到链表头部，而执行则是从头到尾方向，所以<code>defer</code>语句是按照 LIFO 的顺序执行。</p><h3 id="拷贝参数" tabindex="-1"><a class="header-anchor" href="#拷贝参数" aria-hidden="true">#</a> 拷贝参数</h3>`,6),f={href:"https://draveness.me/golang/tree/runtime.deferproc",target:"_blank",rel:"noopener noreferrer"},b=n("code",null,"runtime.deferproc",-1),h=n("h2",{id:"_4-执行-defer",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#_4-执行-defer","aria-hidden":"true"},"#"),s(" 4. 执行 "),n("code",null,"defer")],-1),g={href:"https://draveness.me/golang/tree/runtime.deferreturn",target:"_blank",rel:"noopener noreferrer"},_=n("code",null,"runtime.deferreturn",-1),w=n("code",null,"_defer",-1),y={href:"https://draveness.me/golang/tree/runtime._defer",target:"_blank",rel:"noopener noreferrer"},x=n("code",null,"runtime._defer",-1),j={href:"https://draveness.me/golang/tree/runtime.jmpdefer",target:"_blank",rel:"noopener noreferrer"},q=n("code",null,"runtime.jmpdefer",-1),z=t(`<div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token comment">// Run a deferred function if there is one.</span>
+<span class="token comment">// The compiler inserts a call to this at the end of any</span>
+<span class="token comment">// function which calls defer.</span>
+<span class="token comment">// If there is a deferred function, this will call runtime·jmpdefer,</span>
+<span class="token comment">// which will jump to the deferred function such that it appears</span>
+<span class="token comment">// to have been called by the caller of deferreturn at the point</span>
+<span class="token comment">// just before deferreturn was called. The effect is that deferreturn</span>
+<span class="token comment">// is called again and again until there are no more deferred functions.</span>
+<span class="token comment">//</span>
+<span class="token comment">// Declared as nosplit, because the function should not be preempted once we start</span>
+<span class="token comment">// modifying the caller&#39;s frame in order to reuse the frame to call the deferred</span>
+<span class="token comment">// function.</span>
+<span class="token comment">//</span>
+<span class="token comment">// The single argument isn&#39;t actually used - it just has its address</span>
+<span class="token comment">// taken so it can be matched against pending defers.</span>
+<span class="token comment">//go:nosplit</span>
+<span class="token keyword">func</span> <span class="token function">deferreturn</span><span class="token punctuation">(</span>arg0 <span class="token builtin">uintptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	gp <span class="token operator">:=</span> <span class="token function">getg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	d <span class="token operator">:=</span> gp<span class="token punctuation">.</span>_defer
+	<span class="token keyword">if</span> d <span class="token operator">==</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	sp <span class="token operator">:=</span> <span class="token function">getcallersp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> d<span class="token punctuation">.</span>sp <span class="token operator">!=</span> sp <span class="token punctuation">{</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">if</span> d<span class="token punctuation">.</span>openDefer <span class="token punctuation">{</span>
+		done <span class="token operator">:=</span> <span class="token function">runOpenDeferFrame</span><span class="token punctuation">(</span>gp<span class="token punctuation">,</span> d<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> <span class="token operator">!</span>done <span class="token punctuation">{</span>
+			<span class="token function">throw</span><span class="token punctuation">(</span><span class="token string">&quot;unfinished open-coded defers in deferreturn&quot;</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+		gp<span class="token punctuation">.</span>_defer <span class="token operator">=</span> d<span class="token punctuation">.</span>link
+		<span class="token function">freedefer</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// Moving arguments around.</span>
+	<span class="token comment">//</span>
+	<span class="token comment">// Everything called after this point must be recursively</span>
+	<span class="token comment">// nosplit because the garbage collector won&#39;t know the form</span>
+	<span class="token comment">// of the arguments until the jmpdefer can flip the PC over to</span>
+	<span class="token comment">// fn.</span>
+	<span class="token keyword">switch</span> d<span class="token punctuation">.</span>siz <span class="token punctuation">{</span>
+	<span class="token keyword">case</span> <span class="token number">0</span><span class="token punctuation">:</span>
+		<span class="token comment">// Do nothing.</span>
+	<span class="token keyword">case</span> sys<span class="token punctuation">.</span>PtrSize<span class="token punctuation">:</span>
+		<span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token builtin">uintptr</span><span class="token punctuation">)</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Pointer</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>arg0<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token operator">*</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token builtin">uintptr</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token function">deferArgs</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token keyword">default</span><span class="token punctuation">:</span>
+		<span class="token function">memmove</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Pointer</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>arg0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">deferArgs</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">uintptr</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>siz<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	fn <span class="token operator">:=</span> d<span class="token punctuation">.</span>fn
+	d<span class="token punctuation">.</span>fn <span class="token operator">=</span> <span class="token boolean">nil</span>
+	gp<span class="token punctuation">.</span>_defer <span class="token operator">=</span> d<span class="token punctuation">.</span>link
+	<span class="token function">freedefer</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+	<span class="token comment">// If the defer function pointer is nil, force the seg fault to happen</span>
+	<span class="token comment">// here rather than in jmpdefer. gentraceback() throws an error if it is</span>
+	<span class="token comment">// called with a callback on an LR architecture and jmpdefer is on the</span>
+	<span class="token comment">// stack, because the stack trace can be incorrect in that case - see</span>
+	<span class="token comment">// issue #8153).</span>
+	<span class="token boolean">_</span> <span class="token operator">=</span> fn<span class="token punctuation">.</span>fn
+	<span class="token function">jmpdefer</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> <span class="token function">uintptr</span><span class="token punctuation">(</span>unsafe<span class="token punctuation">.</span><span class="token function">Pointer</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>arg0<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1),D={href:"https://draveness.me/golang/tree/runtime.jmpdefer",target:"_blank",rel:"noopener noreferrer"},P=n("code",null,"runtime.jmpdefer",-1),T=n("code",null,"defer",-1),E={href:"https://draveness.me/golang/tree/runtime.deferreturn",target:"_blank",rel:"noopener noreferrer"},G=n("code",null,"runtime.deferreturn",-1),I=n("h2",{id:"reference",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#reference","aria-hidden":"true"},"#"),s(" Reference")],-1),N={href:"https://github.com/golang/go/tree/release-branch.go1.18/src",target:"_blank",rel:"noopener noreferrer"},A={href:"https://draveness.me/golang/",target:"_blank",rel:"noopener noreferrer"};function C(L,V){const a=l("ExternalLinkIcon");return o(),c("div",null,[r,n("ul",null,[u,d,n("li",null,[s("通过 "),n("a",k,[m,e(a)]),s(" 在堆上创建一个新的结构体")])]),v,n("p",null,[s("调用 "),n("a",f,[b,e(a)]),s(" 函数创建新的延迟调用时就会立刻拷贝函数的参数，函数的参数不会等到真正执行时计算；")]),h,n("p",null,[n("a",g,[_,e(a)]),s(" 会从 Goroutine 的 "),w,s(" 链表中取出最前面的 "),n("a",y,[x,e(a)]),s(" 并调用 "),n("a",j,[q,e(a)]),s(" 传入需要执行的函数和参数：")]),z,n("p",null,[n("a",D,[P,e(a)]),s(" 是一个用汇编语言实现的运行时函数，它的主要工作是跳转到 "),T,s(" 所在的代码段并在执行结束之后跳转回 "),n("a",E,[G,e(a)]),s("。")]),I,n("ol",null,[n("li",null,[n("a",N,[s("https://github.com/golang/go/tree/release-branch.go1.18/src"),e(a)])]),n("li",null,[n("a",A,[s("https://draveness.me/golang/"),e(a)])])])])}const R=p(i,[["render",C],["__file","5.defer.html.vue"]]);export{R as default};
