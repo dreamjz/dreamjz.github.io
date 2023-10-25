@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-2aa888f8","path":"/blog/golang/how/","title":"How","lang":"zh-CN","frontmatter":{"title":"How","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

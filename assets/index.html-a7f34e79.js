@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5611d7d2","path":"/note/golang/gorm/","title":"Gorm","lang":"zh-CN","frontmatter":{"title":"Gorm","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

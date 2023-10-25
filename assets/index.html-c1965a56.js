@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1d996994","path":"/note/golang/github-repos/flower-corp/","title":"Flower Corp","lang":"zh-CN","frontmatter":{"title":"Flower Corp","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

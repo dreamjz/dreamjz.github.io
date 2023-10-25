@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-6fe9401f","path":"/note/docker/docker-compose/","title":"Docker Compose","lang":"zh-CN","frontmatter":{"title":"Docker Compose","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

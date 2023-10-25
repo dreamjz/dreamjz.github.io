@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-774c21eb","path":"/reading/algorithm/algorithms_in_c_part_1-4/02_data_structures/","title":"02 Data Structures","lang":"zh-CN","frontmatter":{"title":"02 Data Structures","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{t as data};

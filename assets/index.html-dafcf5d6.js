@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7697530d","path":"/note/golang/uber-go-zap/","title":"Uber Go Zap","lang":"zh-CN","frontmatter":{"title":"Uber Go Zap","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

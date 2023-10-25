@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-34128616","path":"/reading/golang/high-performance-go/02-datastructure/","title":"02 Datastructure","lang":"zh-CN","frontmatter":{"title":"02 Datastructure","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

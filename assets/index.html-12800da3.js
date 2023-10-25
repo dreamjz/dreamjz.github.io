@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-65f8848d","path":"/note/vue/","title":"Vue","lang":"zh-CN","frontmatter":{"title":"Vue","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

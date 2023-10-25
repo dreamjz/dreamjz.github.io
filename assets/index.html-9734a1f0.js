@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-0d9eda0c","path":"/reading/algorithm/offer_oriented/AL_DS/13_backtracking/","title":"13 Backtracking","lang":"zh-CN","frontmatter":{"title":"13 Backtracking","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

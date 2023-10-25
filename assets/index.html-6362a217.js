@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0674fba9","path":"/note/golang/open-source-books/","title":"Open Source Books","lang":"zh-CN","frontmatter":{"title":"Open Source Books","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-00817fb3","path":"/tag/viper/","title":"viper 标签","lang":"zh-CN","frontmatter":{"title":"viper 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"viper","key":"tag"},"layout":"BlogCategory"},"headers":[],"git":{},"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

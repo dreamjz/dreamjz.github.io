@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-287de1de","path":"/tag/gorm/","title":"gorm 标签","lang":"zh-CN","frontmatter":{"title":"gorm 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"gorm","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

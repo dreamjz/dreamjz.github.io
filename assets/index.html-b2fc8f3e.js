@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1706a50a","path":"/reading/golang/high-performance-go/03-concurrency/","title":"03 Concurrency","lang":"zh-CN","frontmatter":{"title":"03 Concurrency","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

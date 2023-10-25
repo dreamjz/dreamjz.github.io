@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-6b88e44e","path":"/note/golang/open-source-books/high-performance-go/performance-analysis/","title":"Performance Analysis","lang":"zh-CN","frontmatter":{"title":"Performance Analysis","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

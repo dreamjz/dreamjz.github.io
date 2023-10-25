@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-b3024e96","path":"/tag/why/","title":"why 标签","lang":"zh-CN","frontmatter":{"title":"why 标签","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"why","key":"tag"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

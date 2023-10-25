@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-634e7c20","path":"/leetcode/category/","title":"Category","lang":"zh-CN","frontmatter":{"title":"Category","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

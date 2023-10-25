@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-35f72fa3","path":"/note/rpc/protocol-buffers/","title":"Protocol Buffers","lang":"zh-CN","frontmatter":{"title":"Protocol Buffers","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

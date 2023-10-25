@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1e2a6757","path":"/note/golang/github-repos/7days-golang/","title":"7days Golang","lang":"zh-CN","frontmatter":{"title":"7days Golang","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

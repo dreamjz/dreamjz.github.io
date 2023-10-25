@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-8848dfa8","path":"/category/redis/","title":"Redis 分类","lang":"zh-CN","frontmatter":{"title":"Redis 分类","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"Redis","key":"category"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};

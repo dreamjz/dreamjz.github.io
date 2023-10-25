@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-367b840a","path":"/en/slides.html","title":"Slide page","lang":"en-US","frontmatter":{"title":"Slide page","icon":"slides","layout":"Slide"},"headers":[],"readingTime":{"minutes":3.24,"words":971},"filePathRelative":"en/slides.md","excerpt":"<!-- markdownlint-disable MD024 MD033 MD051 -->\\n"}');export{e as data};

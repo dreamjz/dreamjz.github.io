@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-145ac574","path":"/blog/","title":"Index","lang":"zh-CN","frontmatter":{"title":"Index","date":"2021-12-28T00:00:00.000Z","timeline":false},"headers":[],"git":{"updatedTime":1682668422000},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":"blog/README.md","localizedDate":"2021年12月28日","excerpt":""}');export{e as data};

@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-3efe7f8e","path":"/note/golang/open-source-books/advanced-go-programming/","title":"Advanced Go Programming","lang":"zh-CN","frontmatter":{"title":"Advanced Go Programming","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

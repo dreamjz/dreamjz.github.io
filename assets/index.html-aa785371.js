@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-6beb5d16","path":"/gallery/","title":"クトリ・ノタ・セニオリス","lang":"zh-CN","frontmatter":{"title":"クトリ・ノタ・セニオリス"},"headers":[],"readingTime":{"minutes":0.6,"words":179},"filePathRelative":"gallery/README.md","excerpt":""}');export{e as data};

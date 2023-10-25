@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-7a975d53","path":"/note/c-sharp/","title":"C Sharp","lang":"zh-CN","frontmatter":{"title":"C Sharp","article":false,"feed":false,"sitemap":false},"headers":[],"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

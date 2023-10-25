@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-43d7543a","path":"/category/vuepress/","title":"vuepress 分类","lang":"zh-CN","frontmatter":{"title":"vuepress 分类","index":false,"feed":false,"sitemap":false,"blog":{"type":"category","name":"vuepress","key":"category"},"layout":"BlogCategory"},"headers":[],"readingTime":{"minutes":0,"words":0},"filePathRelative":null,"excerpt":""}');export{e as data};
