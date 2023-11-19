@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3c40f7b5","path":"/blog/sc/golang/go-gin-blog/","title":"Go Gin Blog","lang":"zh-CN","frontmatter":{"title":"Go Gin Blog","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
