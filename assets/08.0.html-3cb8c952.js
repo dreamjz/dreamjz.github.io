@@ -1,1 +1,0 @@
-import{_ as a,Z as t,$ as _,a0 as e,a1 as c}from"./framework-09afcf0b.js";const r={},s=e("h1",{id:"_8-0-map",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_8-0-map","aria-hidden":"true"},"#"),c(" 8.0 Map")],-1),o=[s];function n(d,i){return t(),_("div",null,o)}const l=a(r,[["render",n],["__file","08.0.html.vue"]]);export{l as default};
