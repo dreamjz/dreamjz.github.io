@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-15054f24","path":"/note/","title":"Index","lang":"zh-CN","frontmatter":{"title":"Index","date":"2021-10-15T00:00:00.000Z","article":false},"headers":[],"git":{"updatedTime":1701167177000},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":"note/README.md","localizedDate":"2021年10月15日","excerpt":""}');export{e as data};

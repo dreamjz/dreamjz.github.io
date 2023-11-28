@@ -1,0 +1,1 @@
+import{_ as r,Z as t,$ as a,a0 as s}from"./framework-dee406ed.js";const o={},c=["src"];function n(e,l){return t(),a("div",null,[s("iframe",{src:e.$withBase("/assets/markmap/OODSAL01.html"),width:"100%",height:"1000",frameborder:"0",scrolling:"No",leftmargin:"0",topmargin:"0"},null,8,c)])}const i=r(o,[["render",n],["__file","01.0.html.vue"]]);export{i as default};

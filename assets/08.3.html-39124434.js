@@ -1,0 +1,10 @@
+import{_ as n,Z as a,$ as s,a3 as e}from"./framework-dee406ed.js";const o={},l=e(`<h1 id="_8-3-for-range" tabindex="-1"><a class="header-anchor" href="#_8-3-for-range" aria-hidden="true">#</a> 8.3 for range</h1><p><code>for-range</code> 遍历map:</p><ul><li><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">for</span> key<span class="token punctuation">,</span> val <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li><li><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">for</span> key <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li><li><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code><span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> val <span class="token operator">:=</span> <span class="token keyword">range</span> m <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li></ul>`,3),i=[l];function c(t,r){return a(),s("div",null,i)}const p=n(o,[["render",c],["__file","08.3.html.vue"]]);export{p as default};
