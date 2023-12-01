@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0bf99146","path":"/reading/sc/algorithm/offer_oriented/AL_DS/10_trie/","title":"10 Trie","lang":"zh-CN","frontmatter":{"title":"10 Trie","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

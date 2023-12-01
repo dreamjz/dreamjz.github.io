@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1dc1516f","path":"/reading/sc/golang/7-days-golang/","title":"7 Days Golang","lang":"zh-CN","frontmatter":{"title":"7 Days Golang","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

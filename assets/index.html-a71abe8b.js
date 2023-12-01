@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2a9f8520","path":"/reading/sc/golang/high-performance-go/04-compile/","title":"04 Compile","lang":"zh-CN","frontmatter":{"title":"04 Compile","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

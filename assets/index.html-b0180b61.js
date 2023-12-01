@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-8ee9c0c4","path":"/reading/golang/7-days-golang/04-GeeRPC/","title":"04 Gee R P C","lang":"zh-CN","frontmatter":{"title":"04 Gee R P C","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

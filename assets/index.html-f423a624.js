@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-e939705a","path":"/reading/sc/algorithm/offer_oriented/AL_DS/03_string/","title":"03 String","lang":"zh-CN","frontmatter":{"title":"03 String","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

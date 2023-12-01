@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3da60b2f","path":"/note/python/","title":"Python","lang":"zh-CN","frontmatter":{"title":"Python","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

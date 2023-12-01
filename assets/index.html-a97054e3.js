@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-6cec00cb","path":"/reading/algorithm/offer_oriented/AL_DS/12_sort/","title":"12 Sort","lang":"zh-CN","frontmatter":{"title":"12 Sort","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

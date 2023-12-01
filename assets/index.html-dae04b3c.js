@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-72b940c4","path":"/reading/golang/the-design-and-implementation-of-golang/part3-runtime/07-memory/","title":"07 Memory","lang":"zh-CN","frontmatter":{"title":"07 Memory","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0f747279","path":"/reading/sc/algorithm/offer_oriented/AL_DS/15-graph/","title":"15 Graph","lang":"zh-CN","frontmatter":{"title":"15 Graph","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
