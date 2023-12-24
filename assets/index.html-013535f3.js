@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-055bac18","path":"/lang/%E6%97%A5%E6%9C%AC%E8%AA%9E/%E6%A0%87%E6%97%A5/","title":"标日","lang":"zh-CN","frontmatter":{"title":"标日","article":false,"feed":false,"sitemap":false},"headers":[],"git":{},"readingTime":{"minutes":0.03,"words":10},"filePathRelative":null,"excerpt":"\\n"}');export{e as data};
